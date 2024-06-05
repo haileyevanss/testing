@@ -1,0 +1,370 @@
+<!doctype html>
+<html>
+<head>
+    <!--The following displays language used in browser to interpret page -->
+    <meta charset="UTF-8">
+
+    <!--The following line of code displays the page title on a browser tab -->
+    <title>SLOcal Bites | Home</title>
+
+    <!--link tags are for linking to external files, in this case your CSS stylesheet-->
+    <link href="style.css" rel="stylesheet" type="text/css">
+    
+    <!--link tags are for linking to external files, in this case a special CSS stylesheet-->
+    <link href="normalize.css" rel="stylesheet" type="text/css">
+
+    <!--the following tag tells the browser to adjust the site according to screen size-->
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+    <!--The following code links to the jquery library -->
+    <script type="text/javascript" src="js/jquery-2.1.1.min.js"></script>
+
+    <!--The following code links to the javascript file that runs the slideshow -->    
+    <script type="text/javascript" src="js/jquery.cycle2.min.js"></script>
+        
+    <!--The following code links to the javascript file that runs the parallax image -->    
+    <script src="js/parallax.min.js"></script>
+    
+    <!--The following code links to Google Fonts-->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+DW+Pica:ital@0;1&family=IM+Fell+English:ital@0;1&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Cinzel:wght@400..900&family=Lancelot&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=IM+Fell+English:ital@0;1&family=Quattrocento:wght@400;700&display=swap" rel="stylesheet">
+    
+    <!--The following javscript runs the jquery slideshow -->
+    <script type="text/javascript">
+    $('#slider').cycle({});
+    </script>
+
+    <!--The following javascript runs the nav bar which disappears on scroll-->
+    <script type="text/javascript">
+    // Hide Header on on scroll down
+    var didScroll;
+    var lastScrollTop = 0;
+    var delta = 5;
+    var navbarHeight = $('header').outerHeight();
+
+    $(window).scroll(function(event){
+        didScroll = true;
+    });
+
+    setInterval(function() {
+        if (didScroll) {
+            hasScrolled();
+            didScroll = false;
+        }
+    }, 250);
+
+    function hasScrolled() {
+        var st = $(this).scrollTop();
+        
+        // Make sure they scroll more than delta
+        if(Math.abs(lastScrollTop - st) <= delta)
+            return;
+        
+        // If they scrolled down and are past the navbar, add class .nav-up.
+        // This is necessary so you never see what is "behind" the navbar.
+        if (st > lastScrollTop && st > navbarHeight){
+            // Scroll Down
+            $('header').removeClass('nav-down').addClass('nav-up');
+        } else {
+            // Scroll Up
+            if(st + $(window).height() < $(document).height()) {
+                $('header').removeClass('nav-up').addClass('nav-down');
+            }
+        }
+        
+        lastScrollTop = st;
+    }
+    </script>
+        
+    <!--Favicon - images are in a folder called 'fav'-->
+    <link rel="apple-touch-icon" sizes="180x180" href="img/fav/apple-touch-icon.png">
+    <link rel="icon" type="image/png" sizes="32x32" href="img/fav/favicon-32x32.png">
+    <link rel="icon" type="image/png" sizes="16x16" href="img/fav/favicon-16x16.png">
+    <link rel="manifest" href="img/fav/site.webmanifest">
+    <link rel="mask-icon" href="img/fav/safari-pinned-tab.svg" color="#5bbad5">
+    <meta name="msapplication-TileColor" content="#da532c">
+    <meta name="theme-color" content="#ffffff">
+    <!--End Favicon-->
+        
+    <!--back to top button-->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <script>
+    window.onscroll = function() {scrollFunction()};
+
+    function scrollFunction() {
+      if (document.body.scrollTop > 30 || document.documentElement.scrollTop > 30) {
+        document.getElementById("myBtn").style.display = "block";
+      } else {
+        document.getElementById("myBtn").style.display = "none";
+      }
+    }
+
+    // When the user clicks on the button, scroll to the top of the document
+    function topFunction() {
+      document.body.scrollTop = 0; // For Safari
+      document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+    }    
+    </script>   
+    
+</head>
+
+<body>
+
+<!--beginning of navigation section-->
+<header>
+
+<div class="nav-container">
+<div class="brand"><img src="img/logo.png" alt="Logo" class="logo"/></div>
+
+
+<nav>
+<div class="nav-mobile"><a id="nav-toggle" href="#!"><span></span></a></div>
+  <ul class="nav-list">
+        <li>
+          <a href="#home">Welcome</a>
+        </li>
+      <li>
+          <a href="#gal">An Ethiopian Gem</a>
+        </li>
+        <li>
+          <a href="#tl">Word on the Street</a>
+        </li>
+        <li>
+          <a href="#vid">Authentic Sichuan Food</a>
+          </li>
+      <li>
+          <a href="#num">SLO's Farmers Markets</a>
+          </li>
+      <li>
+            <a href="#playlist">Playlist</a>
+        </li>
+      </ul>
+</nav>
+</div>
+    
+<!--closing navigation tag-->
+</header>
+<!--end of navigation section-->
+    
+<!--main image-->
+<div class="container">
+</div>
+<!--animated welcome-->
+<div class="wrapper">
+<!--animated welcome code here-->    
+</div>
+    
+<!--beginning of main content area-->
+<div class="row whiteBG">
+<h2 id="home">Discover San Luis Obispo's Farm-to-Table Delights</h2>
+<article>
+<p class="tab">Welcome to the ultimate guide for food enthusiasts and locavores in San Luis Obispo! Nestled in California's scenic Central Coast, San Luis Obispo is a haven for fresh, locally-sourced cuisine. Here, we celebrate the vibrant culinary landscape that thrives on the bounty of nearby farms, ranches, and artisanal producers.
+    <br><br>Discover the best restaurants committed to serving delectable dishes made from local ingredients!</p>
+<p class="tab"><a href="#gal">An Ethiopian Gem</a></p>
+</article>
+</div>
+
+<!--beginning of slideshow section-->
+<div class="row blueBG"><!--beginning of row-->
+<h2 id="gal">Hidden Gem in Downtown SLO: Ebony</h2>
+<article><!--beginning of article-->
+<p class="tab">Discover and taste authentic, high-quality Ethiopian food!</p>
+<!--beginning of slideshow-->
+<div id="slider"
+data-cycle-caption="#alt-caption"
+data-cycle-caption-template="{{alt}}"
+data-cycle-fx="scrollHorz"
+data-cycle-pause-on-hover="true"
+data-cycle-speed="200">
+<div class="cycle-prev"></div>
+<div class="cycle-next"></div>
+<img src="img/1.jpg" width="100%" height="100%" alt="A hidden gem awaits: tucked in the back of a small building in the heart of downtown San Luis Obispo, the new Ethiopian restaurant Ebony offers an inviting atmosphere and delicious food. As guests walk inside, they are welcomed by traditional Ethiopian décor, featuring colorful textiles and artwork that capture the essence of Ethiopia's rich culture."/>
+<img src="img/2.jpg" width="100%" height="100%" alt="The entrance of Ebony soon transforms into a small dining area alive with Ethiopian music representing the high spirit of this culture. The interior design blends modern and traditional elements together, providing an authentic Ethiopian eating experience while also paying tribute to a place that feels far away."/>
+<img src="img/3.jpg" width="100%" height="100%" alt="Meet the faces behind the food: Ebony replicates true Ethiopian cuisine through its dedication to using only the freshest, organic, and highest-quality ingredients. Helen Abraha (left) and Martha Taezaz (right) choose products that reflect the freshness and quality of their native Ethiopia. This is because of their upbringing, where making food from scratch was a way of life."/>
+<img src="img/4.jpg" width="100%" height="100%" alt="An essential element of Ethiopian cuisine is injera. Each pour of the injera batter narrates a tale of tradition: farm to table. “Everything is started from scratch,” says Martha. When Martha and her sister made injera at a young age, they would first buy the grain, clean it, and take it to the mill to be ground into flour. “That’s how Ethiopians live,” she said."/>
+<img src="img/5.jpg" width="100%" height="100%" alt="In Ethiopia, it is really difficult to find canned ingredients or processed foods. Hence, Helen and Martha stick to their authentic roots and do all the cooking from scratch."/>
+<img src="img/6.jpg" width="100%" height="100%" alt="Injera is described as a “sour flatbread,” according to Martha. It is made from teff, a staple food and ancient grain from Ethiopia. The process of making injera can sometimes be long and tricky. It involves letting the batter rest and ferment for four days."/>
+<img src="img/7.jpg" width="100%" height="100%" alt="In order to capture the authentic flavor of Ethiopian cuisine, some ingredients Ebony uses must be imported from Ethiopia. For example, berbere is a spice derived from a certain type of chili pepper. It can take ten to fifteen days to make this spice because it is prepared naturally, requiring the pepper to be left out to dry in the sun."/>
+<img src="img/8.jpg" width="100%" height="100%" alt="Another imported ingredient Ebony receives is coffee beans. After Helen finishes roasting the beans, she walks to her daughter Ruthie and Martha and shakes the beans so they can waft the smell. This act stems from Ethiopian tradition and pays tribute to their country."/>
+<img src="img/9.jpg" width="100%" height="100%" alt="The kitchen shelves of Ebony are filled with rows of multicolored mesob baskets. These are used for coffee ceremonies or to place plates of food on during wedding ceremonies, according to Ruthie."/>
+<img src="img/10.jpg" width="100%" height="100%" alt="Ebony strives to make their food as authentic as possible, prioritizing the highest-quality ingredients. For example, they choose the premium cold-pressed avocado oil even though it costs more. “We want people to eat and feel good about what they eat,” says Martha. This spread of Ethiopian stews, served on injera, fulfills Ebony's promise to provide high-quality, authentic flavors in each bite."/>
+</div><!--end of slideshow-->
+<!--beginning of slideshow caption-->
+<div id="alt-caption" class="center">
+</div><!--end of slideshow caption-->
+<p class="tab"><a href="#tl">Word on the Street</a></p>
+</article><!--end of article-->
+</div><!--end of row-->
+<!--end of slideshow section-->
+    
+<!--beginning of audio section-->
+<div class="row whiteBG">
+<h2 id="tl">Why do you choose to eat local?</h2>
+<article>
+  <p class="tab">Click on images to hear about why farmers market goers eat local!<br>(Double-click to pause audio)</p>
+  <div class="table">
+    <div id="trip">
+<audio id="audio_1">
+    <source src="audio/1.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_2">
+    <source src="audio/2.mp3" type="audio/mpeg" />
+</audio>        
+<audio id="audio_3">
+    <source src="audio/3.mp3" type="audio/mpeg" />
+</audio>
+        
+<img src="img/rollover/1.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/1.jpg'" onMouseOut="this.src='img/rollover/1.gif'" onClick="document.getElementById('audio_1').play(); return false;" onDblClick="document.getElementById('audio_1').pause(); return false;"> 
+/&gt;
+            
+<img src="img/rollover/2.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/2.jpg'" onMouseOut="this.src='img/rollover/2.gif'" onClick="document.getElementById('audio_2').play(); return false;" onDblClick="document.getElementById('audio_2').pause(); return false;">
+ /&gt;
+            
+<img src="img/rollover/3.gif" class="rollover" alt="description" onMouseOver="this.src='img/rollover/3.jpg'" onMouseOut="this.src='img/rollover/3.gif'" onClick="document.getElementById('audio_3').play(); return false;" onDblClick="document.getElementById('audio_3').pause(); return false;">
+/&gt;
+    </div>
+</div>
+<p class="tab"><a href="#vid">Authentic Sichuan Food</a></p>        
+</article>
+</div>
+<!--end of audio section-->
+    
+<!--beginning of parallax image-->
+<div class="parallax" data-parallax="scroll" data-bleed="10" data-speed="0.2" iosFix="true" data-image-src="img/parallax.jpg">
+</div>
+<!--end of parallax image-->
+
+<!--beginning of video section-->
+<div class="row orangeBG">
+<h2 id="vid">Discover Authentic Chinese Flavor</h2>
+<article>
+<p class="tab">Chef and Owner of Sichuan Kitchen SLO talks about his reasons for cooking with local, fresh ingredients and ______. </p>    
+<video width="100%" height="100%" poster="img/poster.jpg" controls>
+<source src="img/video.mp4" type="video/mp4">
+Your browser does not support the video tag.
+</video>
+<p class="tab"><a href="#num">Where are the farmers markets?</a></p>
+</article>
+</div>  
+    
+    
+<!--end of video section-->
+
+<!--beginning of infographic section-->
+<div class="row whiteBG">
+    <h2 id="num" class="infographic-heading">Where can I find local markets in SLO?</h2> <!-- Added class 'infographic-heading' -->
+    <article>
+        <!--infographic embed code here-->
+        <div class="infographic-container">
+            <iframe title="SLO County Farmers' Markets" aria-label="Locator maps" id="datawrapper-chart-HhkDJ" src="https://datawrapper.dwcdn.net/HhkDJ/2/" class="infographic-iframe" scrolling="no" frameborder="0" data-external="1"></iframe>
+        </div>
+    </article>
+    <p class="tab"><a href="#playlist">Go to Playlist</a></p>
+</div>
+<!--end of infographic section-->
+
+    
+ <script type="text/javascript">
+    window.addEventListener("message", function(event) {
+        if (event.origin !== "https://datawrapper.dwcdn.net") return; // Check the origin of the message
+
+        var iframe = document.getElementById("datawrapper-chart-HhkDJ");
+        if (iframe && event.data["datawrapper-height"]) {
+            iframe.style.height = event.data["datawrapper-height"]["HhkDJ"] + "px";
+        }
+    }, false);
+     
+     
+</script>
+    
+</body>
+    
+<!--the following script controls the responsive navigation-->
+<script>
+    (function($) { // Begin jQuery
+  $(function() { // DOM ready
+    // If a link has a dropdown, add sub menu toggle.
+    $('nav ul li a:not(:only-child)').click(function(e) {
+      $(this).siblings('.nav-dropdown').toggle();
+      // Close one dropdown when selecting another
+      $('.nav-dropdown').not($(this).siblings()).hide();
+      e.stopPropagation();
+    });
+    // Clicking away from dropdown will remove the dropdown class
+    $('html').click(function() {
+      $('.nav-dropdown').hide();
+    });
+    // Toggle open and close nav styles on click
+    $('#nav-toggle').click(function() {
+      $('nav ul').slideToggle();
+    });
+    // Hamburger to X toggle
+    $('#nav-toggle').on('click', function() {
+      this.classList.toggle('active');
+    });
+  }); // end DOM ready
+})(jQuery); // end jQuery
+</script>
+<script>
+var headertext = [];
+var headers = document.querySelectorAll("#miyazaki th"),
+tablerows = document.querySelectorAll("#miyazaki th"),
+tablebody = document.querySelector("#miyazaki tbody");
+for(var i = 0; i < headers.length; i++) {
+    var current = headers[i];
+    headertext.push( current.textContent.replace( /\r?\n|\r/,"") );
+}
+for (var i = 0, row; row = tablebody.rows[i]; i++) {
+    for (var j = 0, col; col = row.cells[j]; j++) {
+        col.setAttribute("data-th", headertext[j]);
+    }
+}
+</script>
+    
+    <!----Prevents audio tracks from playing simultaneously---->
+<script>
+document.addEventListener('play', function(e){
+    var audios = document.getElementsByTagName('audio');
+    for(var i = 0, len = audios.length; i < len;i++){
+        if(audios[i] != e.target){
+            audios[i].pause();
+        }
+    }
+}, true);
+    </script>
+
+    
+    <!-- Beginning of playlist section -->
+<div class="playlist-container">
+    <h2 id="playlist" class="playlist-heading">A Farmers Market Shopping Playlist</h2>
+    <p class="playlist-description">Discover the perfect playlist to enhance your farmers market shopping experience. From upbeat tunes to mellow melodies, this playlist is designed to accompany your search for the freshest produce, artisanal goods, and local treasures. Happy shopping!</p>
+    <div class="playlist-wrapper">
+        <iframe allow="autoplay *; encrypted-media *; fullscreen *; clipboard-write" frameborder="0" height="450" style="width:1200px; max-width:100%; overflow:hidden; border-radius:10px;" sandbox="allow-forms allow-popups allow-same-origin allow-scripts allow-storage-access-by-user-activation allow-top-navigation-by-user-activation" src="https://embed.music.apple.com/us/playlist/a-day-at-the-farmers-market/pl.u-jV89begFD88jpbq"></iframe>
+    </div>
+</div>
+<!-- End of playlist section -->
+
+<!-- End of playlist section -->
+
+<!-- End of playlist section -->
+
+<!-- End of playlist section -->
+
+<!-- End of playlist section -->
+
+<!--beginning of footer-->
+<footer>SLOcal Bites | San Luis Obispo, CA | <a href="mailto: email@email.com?Subject=Inquiry" target="_top">Send Email to haileyyevanss10@gmail.com</a> | Copyright 2024 | Site by Hailey Evans 
+</footer>
+<!--end of footer-->
+
+    
+
+    
+</html>
